@@ -86,7 +86,7 @@ export function MainSection() {
             </div>
             <div className="flex items-center gap-4 pt-4">
               <a
-                href="https://github.com/yourusername"
+                href="https://github.com/nayan135"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-primary transition-colors"
@@ -94,7 +94,7 @@ export function MainSection() {
                 <Github className="h-6 w-6" />
               </a>
               <a
-                href="https://linkedin.com/in/yourusername"
+                href="https://linkedin.com/in/nayan135"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-primary transition-colors"
@@ -102,7 +102,7 @@ export function MainSection() {
                 <Linkedin className="h-6 w-6" />
               </a>
               <a
-                href="https://twitter.com/yourusername"
+                href="https://x.com/nooneknows135"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-primary transition-colors"

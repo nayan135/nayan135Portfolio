@@ -47,7 +47,25 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        <meta charSet="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="FitGreen - A comprehensive health tracking platform empowering users to monitor and improve their wellness." />
+        <meta name="keywords" content="FitGreen, health tracking, fitness, wellness, projects, edumentor, aalankar, tic-tac-toe, weather app" />
+        <meta name="author" content="Nayan Acharya, Nayan135, Nayanacharya, Nayan" />
         <link rel="icon" href="/images/favicon.ico" />
+        
+        {/* Open Graph Meta Tags */}
+        <meta property="og:title" content="FitGreen & Other Projects by Nayan Acharya" />
+        <meta property="og:description" content="Explore my projects including FitGreen, Edumentor, Aalankar, Tic-Tac-Toe, and Weather App, all built to empower healthier lifestyles." />
+        <meta property="og:image" content="/images/fitgreen.jpg" />
+        <meta property="og:url" content="https:nayan135.com.np" />
+        <meta property="og:site_name" content="Nayan Acharya Projects" />
+        
+        {/* Twitter Card Meta Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="FitGreen & Other Projects by Nayan Acharya" />
+        <meta name="twitter:description" content="Discover a collection of innovative projects aimed at promoting health and engagement." />
+        <meta name="twitter:image" content="/images/fitgreen.jpg" />
       </head>
       <body className={`${inter.className} bg-pattern`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
