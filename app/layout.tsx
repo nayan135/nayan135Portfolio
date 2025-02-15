@@ -55,17 +55,17 @@ export default function RootLayout({
         <link rel="icon" href="/images/favicon.ico" />
         
         {/* Open Graph Meta Tags */}
-        <meta property="og:title" content="FitGreen & Other Projects by Nayan Acharya" />
+        <meta property="og:title" content="NAYAN ACHARYA PORTFOLIO" />
         <meta property="og:description" content="Explore my projects including FitGreen, Edumentor, Aalankar, Tic-Tac-Toe, and Weather App, all built to empower healthier lifestyles." />
-        <meta property="og:image" content="/images/fitgreen.jpg" />
-        <meta property="og:url" content="https:nayan135.com.np" />
+        <meta property="og:image" content="/images/avatars/myself.jpg" />
+        <meta property="og:url" content="https://nayan135.com.np" />
         <meta property="og:site_name" content="Nayan Acharya Projects" />
         
         {/* Twitter Card Meta Tags */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="FitGreen & Other Projects by Nayan Acharya" />
-        <meta name="twitter:description" content="Discover a collection of innovative projects aimed at promoting health and engagement." />
-        <meta name="twitter:image" content="/images/fitgreen.jpg" />
+        <meta name="twitter:title" content="AYAN ACHARYA PORTFOLIO" />
+        <meta name="twitter:description" content="Explore my projects including FitGreen, Edumentor, Aalankar, Tic-Tac-Toe, and Weather App, all built to empower healthier lifestyles." />
+        <meta name="twitter:image" content="/images/avatars/myself.jpg" />
       </head>
       <body className={`${inter.className} bg-pattern`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
