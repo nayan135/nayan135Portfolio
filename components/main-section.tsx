@@ -87,7 +87,7 @@ export function MainSection() {
             className="space-y-6"
           >
             <h2 className="text-lg font-medium text-primary"></h2>
-            <h1 className="text-4xl md:text-4xl font-bold tracking-tight">
+            <h1 className="text-5xl md:text-6xl font-bold tracking-tight">
               Hey there! I'm{" "}
               <motion.span
                 className="text-primary"
