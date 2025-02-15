@@ -67,6 +67,28 @@ export default function RootLayout({
         <meta name="twitter:title" content="AYAN ACHARYA PORTFOLIO" />
         <meta name="twitter:description" content="Explore my projects including FitGreen, Edumentor, Aalankar, Tic-Tac-Toe, and Weather App, all built to empower healthier lifestyles." />
         <meta name="twitter:image" content="/images/avatars/myself.jpg" />
+
+        {/* HTML Meta Tags */}
+        <title>NAYAN ACHARYA | PORTFOLIO</title>
+        <meta name="description" content="Explore my projects including FitGreen, Edumentor, Aalankar, Tic-Tac-Toe, and Weather App, all built to empower healthier lifestyles." />
+
+        {/* Google / Search Engine Tags */}
+        <meta itemProp="name" content="NAYAN ACHARYA | PORTFOLIO" />
+        <meta itemProp="description" content="Explore my projects including FitGreen, Edumentor, Aalankar, Tic-Tac-Toe, and Weather App, all built to empower healthier lifestyles." />
+        <meta itemProp="image" content="https://nayan135.vercel.app/images/favicon.ico" />
+
+        {/* Facebook Meta Tags */}
+        <meta property="og:url" content="https://nayan135.vercel.app/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="NAYAN ACHARYA | PORTFOLIO" />
+        <meta property="og:description" content="Explore my projects including FitGreen, Edumentor, Aalankar, Tic-Tac-Toe, and Weather App, all built to empower healthier lifestyles." />
+        <meta property="og:image" content="https://nayan135.vercel.app/images/favicon.ico" />
+
+        {/* Twitter Meta Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="NAYAN ACHARYA | PORTFOLIO" />
+        <meta name="twitter:description" content="Explore my projects including FitGreen, Edumentor, Aalankar, Tic-Tac-Toe, and Weather App, all built to empower healthier lifestyles." />
+        <meta name="twitter:image" content="https://nayan135.vercel.app/images/avatars/myself.jpg" />
       </Head>
       <body className={`${inter.className} bg-pattern min-h-screen`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
