@@ -15,14 +15,14 @@ export function MainSection() {
   const [isDeleting, setIsDeleting] = useState(false)
   const [delta, setDelta] = useState(100)
 
-  const names = ["Nayan Acharya", "नयन Acharya", "Nayan आचार्य"]
+  const names = ["Nayan Acharya", "नयन Acharya", "Nayan आचार्य", "नयन आचार्य"]
   const [nameIndex, setNameIndex] = useState(0)
 
   // New: Random avatar selection
   const avatars = [
     "/images/avatars/myself.jpg",
     "/images/avatars/myself-1.jpg",
-    "/images/avatars/myself-2.jpg"
+    "/images/avatars/myself-2.jpg",
   ]
   const [avatar, setAvatar] = useState(avatars[0])
   
@@ -86,8 +86,8 @@ export function MainSection() {
             transition={{ delay: 0.2 }}
             className="space-y-6"
           >
-            <h2 className="text-lg font-medium text-primary">Welcome to my portfolio</h2>
-            <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
+            <h2 className="text-lg font-medium text-primary"></h2>
+            <h1 className="text-4xl md:text-4xl font-bold tracking-tight">
               Hey there! I'm{" "}
               <motion.span
                 className="text-primary"
@@ -153,7 +153,7 @@ export function MainSection() {
             transition={{ delay: 0.4 }}
             className="relative"
           >
-            <div className="relative aspect-[4/5] w-full max-w-md mx-auto">
+            <div className="relative aspect-[4/5] w-full max-w-lg mx-auto">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-2xl -rotate-6 transform-gpu" />
               <Image
                 src={avatar}
