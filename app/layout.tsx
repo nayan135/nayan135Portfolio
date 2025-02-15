@@ -50,8 +50,8 @@ export default function RootLayout({
       <Head>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="description" content="FitGreen - A comprehensive health tracking platform empowering users to monitor and improve their wellness." />
-        <meta name="keywords" content="FitGreen, health tracking, fitness, wellness, projects, edumentor, aalankar, tic-tac-toe, weather app" />
+        <meta name="description" content="Explore my projects including FitGreen, Edumentor, Aalankar, Tic-Tac-Toe, and Weather App, all built to empower healthier lifestyles." />
+        <meta name="keywords" content="FitGreen, Education, health tracking, fitness, wellness, projects, edumentor, aalankar, tic-tac-toe, weather app" />
         <meta name="author" content="Nayan Acharya, Nayan135, Nayanacharya, Nayan" />
         <link rel="icon" href="/images/favicon.ico" />
         
