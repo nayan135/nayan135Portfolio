@@ -17,14 +17,14 @@ export function AboutSection() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="p-6 md:p-12 bg-gradient-to-br from-background to-secondary/10 text-foreground w-full min-h-screen overflow-hidden"
+      className="p-6 md:p-12 bg-gradient-to-br from-background to-secondary/10 text-foreground w-full min-h-screen overflow-auto pt-8"
     >
-      <div className="max-w-7xl mx-auto">
+      <div className=" mt-10 max-w-7xl mx-auto">
         <motion.h2
           initial={{ y: -50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.2, duration: 0.5 }}
-          className="text-4xl md:text-5xl font-bold mb-8 text-center"
+          className="mt-8 md:mt-0 text-4xl md:text-5xl font-bold mb-8 text-center"
         >
           About Me
         </motion.h2>
@@ -55,7 +55,7 @@ export function AboutSection() {
               developer community.
             </p>
           </motion.div>
-          <motion.div className="pl-8 border-l-2 border-gradient-to-b from-primary to-secondary">
+          <motion.div className="lg:pl-8 lg:border-l-2 lg:border-gradient-to-b from-primary to-secondary">
             <h3 className="text-2xl font-semibold mb-8">My Journey</h3>
             <ul className="space-y-8">
               {journeyItems.map((item, index) => (
