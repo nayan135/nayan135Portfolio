@@ -74,9 +74,9 @@ export function MainSection() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="min-h-screen relative overflow-hidden"
+      className="relative overflow-hidden min-h-[calc(100vh-80px)]"
     >
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-secondary/5" />
+      <div className="absolute inset-0 bg-pattern" /> {}
 
       <div className="container mx-auto px-4 h-screen flex items-center">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
@@ -153,7 +153,7 @@ export function MainSection() {
             transition={{ delay: 0.4 }}
             className="relative"
           >
-            <div className="relative aspect-[4/5] w-full max-w-lg mx-auto">
+            <div className="relative aspect-[4/5] w-full max-w-md mx-auto">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-2xl -rotate-6 transform-gpu" />
               <Image
                 src={avatar}
