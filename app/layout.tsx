@@ -71,7 +71,7 @@ export default function RootLayout({
         {/* HTML Meta Tags */}
         <title>NAYAN ACHARYA | PORTFOLIO</title>
         <meta name="description" content="Explore my projects including FitGreen, Edumentor, Aalankar, Tic-Tac-Toe, and Weather App, all built to empower healthier lifestyles." />
-
+<meta name="google-adsense-account" content="ca-pub-7528456570041321">
         {/* Google / Search Engine Tags */}
         <meta itemProp="name" content="NAYAN ACHARYA | PORTFOLIO" />
         <meta itemProp="description" content="Explore my projects including FitGreen, Edumentor, Aalankar, Tic-Tac-Toe, and Weather App, all built to empower healthier lifestyles." />
