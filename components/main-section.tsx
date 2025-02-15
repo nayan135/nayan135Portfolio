@@ -15,6 +15,31 @@ export function MainSection() {
   const [isDeleting, setIsDeleting] = useState(false)
   const [delta, setDelta] = useState(100)
 
+  const names = ["Nayan Acharya", "नयन Acharya", "Nayan आचार्य"]
+  const [nameIndex, setNameIndex] = useState(0)
+
+  // New: Random avatar selection
+  const avatars = [
+    "/images/avatars/myself.jpg",
+    "/images/avatars/myself-1.jpg",
+    "/images/avatars/myself-2.jpg"
+  ]
+  const [avatar, setAvatar] = useState(avatars[0])
+  
+  useEffect(() => {
+    const randomAvatar = avatars[Math.floor(Math.random() * avatars.length)]
+    setAvatar(randomAvatar)
+  }, [])
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setNameIndex((prev) => (prev + 1) % names.length)
+    }, 3000)
+    return () => clearInterval(timer)
+  }, [])
+
+  const displayedName = names[nameIndex]
+
   useEffect(() => {
     let timer: NodeJS.Timeout
 
@@ -63,7 +88,17 @@ export function MainSection() {
           >
             <h2 className="text-lg font-medium text-primary">Welcome to my portfolio</h2>
             <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
-              Hey there! I'm <span className="text-primary">Nayan Acharya</span>
+              Hey there! I'm{" "}
+              <motion.span
+                className="text-primary"
+                key={displayedName}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.5 }}
+              >
+                {displayedName}
+              </motion.span>
             </h1>
             <div className="h-12">
               <p className="text-xl md:text-2xl text-muted-foreground">
@@ -121,7 +156,7 @@ export function MainSection() {
             <div className="relative aspect-[4/5] w-full max-w-md mx-auto">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-2xl -rotate-6 transform-gpu" />
               <Image
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/20241019_110750.jpg-9Q2m9zni3jQd4ejydPWYY1Uka9dKKC.jpeg"
+                src={avatar}
                 alt="Nayan Acharya"
                 fill
                 className="object-cover rounded-2xl shadow-2xl"
