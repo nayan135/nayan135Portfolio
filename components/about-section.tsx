@@ -19,7 +19,7 @@ export function AboutSection() {
       transition={{ duration: 0.5 }}
       className="p-6 md:p-12 bg-gradient-to-br from-background to-secondary/10 text-foreground w-full min-h-screen overflow-auto pt-8"
     >
-      <div className=" mt-10 max-w-7xl mx-auto">
+      <div className="mt-10 max-w-7xl mx-auto">
         <motion.h2
           initial={{ y: -50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}

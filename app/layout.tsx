@@ -2,6 +2,7 @@
 
 import type React from "react"
 import { Component } from 'react';
+import Head from "next/head"
 
 import "./globals.css"
 import { Inter } from "next/font/google"
@@ -45,8 +46,8 @@ export default function RootLayout({
   }, [])
 
   return (
-    <html lang="en" suppressHydrationWarning>
-      <head>
+    <html lang="en">
+      <Head>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="description" content="FitGreen - A comprehensive health tracking platform empowering users to monitor and improve their wellness." />
@@ -66,8 +67,8 @@ export default function RootLayout({
         <meta name="twitter:title" content="AYAN ACHARYA PORTFOLIO" />
         <meta name="twitter:description" content="Explore my projects including FitGreen, Edumentor, Aalankar, Tic-Tac-Toe, and Weather App, all built to empower healthier lifestyles." />
         <meta name="twitter:image" content="/images/avatars/myself.jpg" />
-      </head>
-      <body className={`${inter.className} bg-pattern`}>
+      </Head>
+      <body className={`${inter.className} bg-pattern min-h-screen`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <ErrorBoundary>
             {isLoading ? (

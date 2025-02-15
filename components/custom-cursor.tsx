@@ -4,6 +4,7 @@ import { useState, useEffect, useCallback } from "react"
 
 export function CustomCursor() {
   const [position, setPosition] = useState({ x: 0, y: 0 })
+  const [isMobile, setIsMobile] = useState(false)
 
   const updatePosition = useCallback((e: MouseEvent) => {
     requestAnimationFrame(() => {
@@ -12,11 +13,20 @@ export function CustomCursor() {
   }, [])
 
   useEffect(() => {
+    setIsMobile(window.innerWidth < 768)
+    const handleResize = () => setIsMobile(window.innerWidth < 768)
+    window.addEventListener("resize", handleResize)
+    return () => window.removeEventListener("resize", handleResize)
+  }, [])
+
+  useEffect(() => {
     document.addEventListener("mousemove", updatePosition)
     return () => {
       document.removeEventListener("mousemove", updatePosition)
     }
   }, [updatePosition])
+
+  if (isMobile) return null
 
   return (
     <div
