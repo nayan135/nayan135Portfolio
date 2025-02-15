@@ -55,18 +55,7 @@ export function AboutSection() {
               developer community.
             </p>
           </motion.div>
-          <motion.div
-            initial={{ x: 50, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ delay: 0.4, duration: 0.5 }}
-            className="relative"
-          >
-            <motion.div
-              initial={{ height: 0 }}
-              animate={{ height: "100%" }}
-              transition={{ delay: 0.6, duration: 1 }}
-              className="absolute left-8 top-0 w-1 bg-gradient-to-b from-primary to-secondary h-full rounded-full"
-            />
+          <motion.div className="pl-8 border-l-2 border-gradient-to-b from-primary to-secondary">
             <h3 className="text-2xl font-semibold mb-8">My Journey</h3>
             <ul className="space-y-8">
               {journeyItems.map((item, index) => (
