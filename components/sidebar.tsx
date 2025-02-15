@@ -100,4 +100,3 @@ function NavIcon({ icon: Icon, onClick, isActive, label, href, download }: NavIc
     </button>
   )
 }
-
