@@ -82,7 +82,7 @@ export const projects: Project[] = [
       "/images/fitgreen-4.jpg",
     ],
     slug: "fitgreen",
-    demoUrl: "https://fitgreen1.vercel.app",
+    demoUrl: "https://fitgreen.nayanacharya.info.np",
     githubUrl: "https://github.com/nayan135/fitgreenproj",
     contributors: [
       {
@@ -178,8 +178,8 @@ export const projects: Project[] = [
     image: "/images/edumentor.jpg",
     images: [],
     slug: "edumentor",
-    demoUrl: "https://edumentor.example.com",
-    githubUrl: "https://github.com/yourusername/edumentor",
+    demoUrl: "https://edumentor.nayanacharya.info.np",
+    githubUrl: "https://github.com/nayan135/edumentor",
     contributors: [
       {
         name: "Nayan Acharya",
