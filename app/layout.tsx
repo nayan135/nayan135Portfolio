@@ -1,117 +1,129 @@
-"use client"
-
-import type React from "react"
-import { Component } from 'react';
-import Head from "next/head"
-
+import React from "react"
 import "./globals.css"
 import { Inter } from "next/font/google"
 import { ThemeProvider } from "@/components/theme-provider"
-import { Sidebar } from "@/components/sidebar"
 import { CustomCursor } from "@/components/custom-cursor"
-import { LoadingAnimation } from "@/components/loading-animation"
-import { useState, useEffect } from "react"
+import ClientContent from "./ClientContent"
+import { ErrorBoundary } from "@/components/error-boundary"
+import Script from "next/script"
 
 const inter = Inter({ subsets: ["latin"] })
 
-class ErrorBoundary extends Component {
-  state = { hasError: false };
-  static getDerivedStateFromError() {
-    return { hasError: true };
-  }
-  componentDidCatch(error: any) {
-    console.error('ErrorBoundary caught an error:', error);
-  }
-  render() {
-    if (this.state.hasError) {
-      return <h1>Something went wrong.</h1>;
+// Expanded metadata for better SEO
+export const metadata = {
+  title: "Nayan Acharya | Portfolio & Projects | Developer",
+  description: "Nayan Acharya (Nayan135) is a full-stack developer specializing in web development. Explore projects including FitGreen, Edumentor, Aalankar, and more.",
+  keywords: "Nayan Acharya, Nayan135, Nayan, FitGreen, Edumentor, Aalankar, developer portfolio, web development, full-stack developer, Nepal developer",
+  authors: [{ name: "Nayan Acharya", url: "https://github.com/nayan135" }],
+  creator: "Nayan Acharya",
+  publisher: "Nayan Acharya",
+  formatDetection: {
+    email: true,
+    address: true,
+    telephone: true,
+  },
+  openGraph: {
+    title: "Nayan Acharya | Full-Stack Developer Portfolio",
+    description: "Explore Nayan Acharya's (Nayan135) development projects including FitGreen, Edumentor, and more. Full-stack developer specializing in modern web applications.",
+    url: "https://nayan135.com.np",
+    siteName: "Nayan Acharya Portfolio",
+    images: [{ 
+      url: "/images/avatars/myself.jpg",
+      width: 1200,
+      height: 630,
+      alt: "Nayan Acharya - Full Stack Developer"
+    }],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Nayan Acharya | Developer Portfolio",
+    description: "Check out Nayan Acharya's (Nayan135) projects and skills in full-stack development.",
+    creator: "@nooneknows135",
+    images: ["/images/avatars/myself.jpg"],
+  },
+  alternates: {
+    canonical: "https://nayan135.com.np",
+    languages: {
+      'en-US': 'https://nayan135.com.np/en-US',
+    },
+  },
+  metadataBase: new URL("https://nayan135.com.np"),
+  // Removed the placeholder verification code since domain is already verified through Cloudflare
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
     }
-    return this.props.children;
-  }
+  },
 }
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
-  const [isLoading, setIsLoading] = useState(true)
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false)
-    }, 2000)
-
-    return () => clearTimeout(timer)
-  }, [])
-
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <Head>
-        <meta charSet="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="description" content="Explore my projects including FitGreen, Edumentor, Aalankar, Tic-Tac-Toe, and Weather App, all built to empower healthier lifestyles." />
-        <meta name="keywords" content="FitGreen, Education, health tracking, fitness, wellness, projects, edumentor, aalankar, tic-tac-toe, weather app" />
-        <meta name="author" content="Nayan Acharya, Nayan135, Nayanacharya, Nayan" />
-        <link rel="icon" href="/images/favicon.ico" />
-        
-        {/* Open Graph Meta Tags */}
-        <meta property="og:title" content="NAYAN ACHARYA PORTFOLIO" />
-        <meta property="og:description" content="Explore my projects including FitGreen, Edumentor, Aalankar, Tic-Tac-Toe, and Weather App, all built to empower healthier lifestyles." />
-        <meta property="og:image" content="/images/avatars/myself.jpg" />
-        <meta property="og:url" content="https://nayan135.com.np" />
-        <meta property="og:site_name" content="Nayan Acharya Projects" />
-        
-        {/* Twitter Card Meta Tags */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="AYAN ACHARYA PORTFOLIO" />
-        <meta name="twitter:description" content="Explore my projects including FitGreen, Edumentor, Aalankar, Tic-Tac-Toe, and Weather App, all built to empower healthier lifestyles." />
-        <meta name="twitter:image" content="/images/avatars/myself.jpg" />
-
-        {/* HTML Meta Tags */}
-        <title>NAYAN ACHARYA | PORTFOLIO</title>
-        <meta name="description" content="Explore my projects including FitGreen, Edumentor, Aalankar, Tic-Tac-Toe, and Weather App, all built to empower healthier lifestyles." />
-<meta name="google-adsense-account" content="ca-pub-7528456570041321">
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7528456570041321"
-     crossorigin="anonymous"></script>
- 
-        {/* Google / Search Engine Tags */}
-        <meta itemProp="name" content="NAYAN ACHARYA | PORTFOLIO" />
-        <meta itemProp="description" content="Explore my projects including FitGreen, Edumentor, Aalankar, Tic-Tac-Toe, and Weather App, all built to empower healthier lifestyles." />
-        <meta itemProp="image" content="https://nayan135.vercel.app/images/favicon.ico" />
-
-        {/* Facebook Meta Tags */}
-        <meta property="og:url" content="https://nayan135.vercel.app/" />
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content="NAYAN ACHARYA | PORTFOLIO" />
-        <meta property="og:description" content="Explore my projects including FitGreen, Edumentor, Aalankar, Tic-Tac-Toe, and Weather App, all built to empower healthier lifestyles." />
-        <meta property="og:image" content="https://nayan135.vercel.app/images/favicon.ico" />
-
-        {/* Twitter Meta Tags */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="NAYAN ACHARYA | PORTFOLIO" />
-        <meta name="twitter:description" content="Explore my projects including FitGreen, Edumentor, Aalankar, Tic-Tac-Toe, and Weather App, all built to empower healthier lifestyles." />
-        <meta name="twitter:image" content="https://nayan135.vercel.app/images/avatars/myself.jpg" />
-      </Head>
+      <head>
+        <meta name="google-adsense-account" content="ca-pub-7528456570041321" />
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7528456570041321" crossOrigin="anonymous" />
+        <link rel="canonical" href="https://nayan135.com.np" />
+        <link rel="alternate" href="https://nayan135.night-owls.tech" />
+        <link rel="alternate" href="https://nayanacharya.xyz" />
+      </head>
       <body className={`${inter.className} bg-pattern min-h-screen`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <ErrorBoundary>
-            {isLoading ? (
-              <LoadingAnimation />
-            ) : (
-              <div className="flex">
-                <Sidebar />
-                <main className="flex-1 ml-16 md:ml-20">{children}</main>
-              </div>
-            )}
+            <ClientContent>
+              {children}
+            </ClientContent>
             <CustomCursor />
           </ErrorBoundary>
         </ThemeProvider>
+        
+        {/* Structured data for better SEO */}
+        <Script id="person-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Person",
+          "name": "Nayan Acharya",
+          "alternateName": "Nayan135",
+          "url": "https://nayan135.com.np",
+          "sameAs": [
+            "https://github.com/nayan135",
+            "https://linkedin.com/in/nayan135",
+            "https://x.com/nooneknows135"
+          ],
+          "jobTitle": "Developer",
+          "worksFor": {
+            "@type": "Organization",
+            "name": "Nayan Acharya Portfolio"
+          },
+          "image": "https://nayan135.com.np/images/avatars/myself.jpg",
+          "description": "Nayan Acharya is a full-stack developer specializing in web development, creating projects like FitGreen and Edumentor."
+        })}} />
+        
+        {/* Website schema */}
+        <Script id="website-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "url": "https://nayan135.com.np",
+          "name": "Nayan Acharya Portfolio",
+          "alternateName": ["Nayan135 Portfolio", "Nayan Acharya Developer", "नयन आचार्य"],
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+              "@type": "EntryPoint",
+              "urlTemplate": "https://nayan135.com.np/search?q={search_term_string}"
+            },
+            "query-input": "required name=search_term_string"
+          }
+        })}} />
       </body>
     </html>
   )
 }
 
-import './globals.css'
 
 
