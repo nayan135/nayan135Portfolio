@@ -1,7 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    // The appDir option is no longer needed in Next.js 14+
-    // as the App Router is the default now
     images: {
         domains: ['nayan135.com.np', 'nayan135.night-owls.tech', 'nayanacharya.xyz'],
     },
@@ -34,6 +32,22 @@ const nextConfig = {
             },
             ],
         },];
+    },
+    // Handle redirects to ensure robots.txt and sitemap.xml are accessible on all domains
+    async rewrites() {
+        return {
+            beforeFiles: [
+                // Make sitemap.xml accessible on all domains
+                {
+                    source: '/sitemap.xml',
+                    destination: '/api/sitemap',
+                    has: [{
+                        type: 'host',
+                        value: 'nayanacharya.xyz',
+                    },],
+                },
+            ],
+        };
     },
 }
 

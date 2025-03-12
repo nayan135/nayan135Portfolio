@@ -1,50 +1,105 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Main domain URLs -->
   <url>
     <loc>https://nayan135.com.np/</loc>
-    <lastmod>2025-02-01</lastmod>
+    <lastmod>2023-12-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://nayan135.com.np/about</loc>
-    <lastmod>2025-02-01</lastmod>
+    <lastmod>2023-12-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://nayan135.com.np/projects</loc>
-    <lastmod>2025-02-01</lastmod>
+    <lastmod>2023-12-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
+  
+  <!-- Project URLs -->
   <url>
     <loc>https://nayan135.com.np/projects/fitgreen</loc>
-    <lastmod>2025-02-01</lastmod>
+    <lastmod>2023-12-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://nayan135.com.np/projects/edumentor</loc>
-    <lastmod>2025-02-01</lastmod>
+    <lastmod>2023-12-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://nayan135.com.np/projects/aalankar</loc>
-    <lastmod>2025-02-01</lastmod>
+    <lastmod>2023-12-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://nayan135.com.np/projects/tic-tac-toe</loc>
-    <lastmod>2025-02-01</lastmod>
+    <lastmod>2023-12-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://nayan135.com.np/projects/weather-app</loc>
-    <lastmod>2025-02-01</lastmod>
+    <lastmod>2023-12-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Secondary domain URLs -->
+  <url>
+    <loc>https://nayanacharya.xyz/</loc>
+    <lastmod>2023-12-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://nayanacharya.xyz/about</loc>
+    <lastmod>2023-12-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nayanacharya.xyz/projects</loc>
+    <lastmod>2023-12-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- Project URLs for secondary domain -->
+  <url>
+    <loc>https://nayanacharya.xyz/projects/fitgreen</loc>
+    <lastmod>2023-12-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://nayanacharya.xyz/projects/edumentor</loc>
+    <lastmod>2023-12-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://nayanacharya.xyz/projects/aalankar</loc>
+    <lastmod>2023-12-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://nayanacharya.xyz/projects/tic-tac-toe</loc>
+    <lastmod>2023-12-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://nayanacharya.xyz/projects/weather-app</loc>
+    <lastmod>2023-12-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
