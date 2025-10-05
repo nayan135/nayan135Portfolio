@@ -7,22 +7,36 @@ import { motion } from "framer-motion"
 import { ArrowRight, Github, Linkedin, Twitter } from "lucide-react"
 import Link from "next/link"
 import Head from "next/head"
+import { FloatingParticles } from "@/components/floating-particles"
+import { MagneticButton } from "@/components/magnetic-button"
+import { TextReveal } from "@/components/text-reveal"
+import { IPersonalInfo } from "@/lib/types"
+import { GTMEvents, useGTMPageView, useGTMTimeTracking, useGTMScrollTracking } from "@/lib/gtm"
 
 // Enhanced roles with more specific developer-focused terms for better SEO
 const roles = ["Full-Stack Developer", "Student", "Web Developer", "Next.js Developer", "UI/UX Enthusiast"]
 
-export function MainSection() {
+interface MainSectionProps {
+  personalInfo?: IPersonalInfo | null
+}
+
+export function MainSection({ personalInfo }: MainSectionProps) {
+  // GTM tracking hooks
+  useGTMPageView('Home')
+  useGTMTimeTracking('Home')
+  useGTMScrollTracking('Home')
+
   const [displayedRole, setDisplayedRole] = useState("")
   const [roleIndex, setRoleIndex] = useState(0)
   const [isDeleting, setIsDeleting] = useState(false)
   const [delta, setDelta] = useState(100)
 
   // Include variations of your name for SEO, both Latin and Devanagari scripts
-  const names = ["Nayan Acharya", "नयन Acharya", "Nayan आचार्य", "नयन आचार्य"]
+  const names = personalInfo ? [personalInfo.name] : ["Nayan Acharya", "नयन Acharya", "Nayan आचार्य", "नयन आचार्य"]
   const [nameIndex, setNameIndex] = useState(0)
 
   // New: Random avatar selection
-  const avatars = [
+  const avatars = personalInfo ? [personalInfo.avatar] : [
     "/images/avatars/myself.jpg",
     "/images/avatars/myself-1.jpg",
     "/images/avatars/myself-2.jpg",
@@ -74,6 +88,7 @@ export function MainSection() {
 
   return (
     <>
+      <FloatingParticles />
       <Head>
         {/* Additional meta tags for this section of Nayan Acharya's profile */}
         <meta name="keywords" content="Nayan Acharya, Nayan135, नयन आचार्य, Full-Stack Developer, NextJS Developer, Portfolio" />
@@ -116,49 +131,61 @@ export function MainSection() {
                   </p>
                 </div>
                 <p className="text-lg text-muted-foreground">
-                  I build responsive, accessible, and performant web applications using Next.js, React, and TypeScript.
+                  {personalInfo?.bio || "I build responsive, accessible, and performant web applications using Next.js, React, and TypeScript."}
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Button size="lg" className="group" asChild>
-                    <Link href="/projects">
+                    <Link 
+                      href="/projects"
+                      onClick={() => GTMEvents.navigationClick('Projects')}
+                    >
                       View My Work
                       <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                     </Link>
                   </Button>
                   <Button size="lg" variant="outline" asChild>
-                    <a href="/images/resume.pdf" download>
+                    <a 
+                      href={personalInfo?.resume || "/images/resume.pdf"} 
+                      download
+                      onClick={() => GTMEvents.resumeDownload()}
+                    >
                       Download Resume
                     </a>
                   </Button>
                 </div>
                 <div className="flex items-center gap-4 pt-4">
                   <a
-                    href="https://github.com/nayan135"
+                    href={personalInfo?.social?.github || "https://github.com/nayan135"}
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label="Visit Nayan Acharya's GitHub profile"
+                    aria-label={`Visit ${personalInfo?.name || "Nayan Acharya"}'s GitHub profile`}
                     className="text-muted-foreground hover:text-primary transition-colors"
+                    onClick={() => GTMEvents.socialClick('GitHub', personalInfo?.social?.github || "https://github.com/nayan135")}
                   >
                     <Github className="h-6 w-6" />
                   </a>
                   <a
-                    href="https://linkedin.com/in/nayan135"
+                    href={personalInfo?.social?.linkedin || "https://linkedin.com/in/nayan135"}
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label="Connect with Nayan Acharya on LinkedIn"
+                    aria-label={`Connect with ${personalInfo?.name || "Nayan Acharya"} on LinkedIn`}
                     className="text-muted-foreground hover:text-primary transition-colors"
+                    onClick={() => GTMEvents.socialClick('LinkedIn', personalInfo?.social?.linkedin || "https://linkedin.com/in/nayan135")}
                   >
                     <Linkedin className="h-6 w-6" />
                   </a>
-                  <a
-                    href="https://x.com/nooneknows135"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Follow Nayan Acharya on X (Twitter)"
-                    className="text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    <Twitter className="h-6 w-6" />
-                  </a>
+                  {(personalInfo?.social?.twitter || "https://x.com/nooneknows135") && (
+                    <a
+                      href={personalInfo?.social?.twitter || "https://x.com/nooneknows135"}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`Follow ${personalInfo?.name || "Nayan Acharya"} on X (Twitter)`}
+                      className="text-muted-foreground hover:text-primary transition-colors"
+                      onClick={() => GTMEvents.socialClick('Twitter', personalInfo?.social?.twitter || "https://x.com/nooneknows135")}
+                    >
+                      <Twitter className="h-6 w-6" />
+                    </a>
+                  )}
                 </div>
               </motion.div>
 
@@ -172,7 +199,7 @@ export function MainSection() {
                   <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-2xl -rotate-6 transform-gpu" />
                   <Image
                     src={avatar}
-                    alt="Nayan Acharya - Full Stack Developer"
+                    alt={`${personalInfo?.name || "Nayan Acharya"} - ${personalInfo?.title || "Full Stack Developer"}`}
                     fill
                     className="object-cover rounded-2xl shadow-2xl"
                     priority

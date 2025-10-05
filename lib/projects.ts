@@ -114,7 +114,7 @@ export const projects: Project[] = [
         name: "Sanjog Pandey",
         role: "Designer",
         avatar: "/images/avatars/sanjog.jpg",
-        link: "",
+        link: "https://github.com/sanjogpandey",
       },
 
     ],
@@ -257,7 +257,7 @@ export const projects: Project[] = [
       "/images/aalankar-2.jpg",
     ],
     slug: "aalankar",
-    demoUrl: "",
+    demoUrl: "https://github.com/nayan135/aalankar",
     githubUrl: "https://github.com/nayan135/aalankar",
     contributors: [
       {

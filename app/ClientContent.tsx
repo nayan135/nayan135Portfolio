@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react"
 import { Sidebar } from "@/components/sidebar"
-import { LoadingAnimation } from "@/components/loading-animation"
+import { MorphingLoader } from "@/components/morphing-loader"
 
 export default function ClientContent({ children }: { children: React.ReactNode }) {
   const [isLoading, setIsLoading] = useState(true)
@@ -13,7 +13,7 @@ export default function ClientContent({ children }: { children: React.ReactNode 
   }, [])
   
   if (isLoading) {
-    return <LoadingAnimation />
+    return <MorphingLoader />
   }
   
   return (
