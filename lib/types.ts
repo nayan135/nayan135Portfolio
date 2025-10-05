@@ -19,7 +19,7 @@ export interface IProject {
   images: string[]
   featured: boolean
   technologies: string[]
-  status: 'active' | 'inactive' | 'draft'
+  status: 'active' | 'archived' | 'in-development'
   order: number
   createdAt?: Date
   updatedAt?: Date
@@ -31,48 +31,42 @@ export interface IPersonalInfo {
   title: string
   bio: string
   email: string
-  phone: string
-  location: string
   avatar: string
+  resume: string
   social: {
     github: string
     linkedin: string
-    twitter: string
-    website: string
-  }
-  socialLinks: {
-    github: string
-    linkedin: string
-    twitter: string
-    website: string
+    twitter?: string
+    website?: string
   }
   skills: string[]
-  resume: string
+  experience: {
+    company: string
+    position: string
+    duration: string
+    description: string
+  }[]
+  education: {
+    institution: string
+    degree: string
+    duration: string
+    description?: string
+  }[]
   createdAt?: Date
   updatedAt?: Date
 }
 
 export interface ISiteSettings {
   _id?: string
-  siteName: string
-  siteDescription: string
-  siteUrl: string
-  logo: string
+  seoTitle: string
+  seoDescription: string
+  seoKeywords: string[]
+  ogImage: string
   favicon: string
-  gtmId: string
-  analyticsId: string
-  contactEmail: string
-  socialLinks: {
-    github: string
-    linkedin: string
-    twitter: string
-    website: string
-  }
-  seoSettings: {
-    keywords: string[]
-    ogImage: string
-    twitterHandle: string
-  }
+  googleAnalytics?: string
+  gtmId?: string
+  maintenanceMode: boolean
+  themeColor: string
   createdAt?: Date
   updatedAt?: Date
 }

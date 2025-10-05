@@ -107,7 +107,7 @@ export class DataService {
 import dbConnect from './mongodb'
 import { Project, PersonalInfo, SiteSettings } from './models'
 
-export async function getProjectsStatic(params?: { featured?: boolean; status?: string }) {
+export async function getProjectsStatic(params?: { featured?: boolean; status?: string }): Promise<IProject[]> {
   try {
     await dbConnect()
     
@@ -126,7 +126,7 @@ export async function getProjectsStatic(params?: { featured?: boolean; status?: 
   }
 }
 
-export async function getProjectStatic(slug: string) {
+export async function getProjectStatic(slug: string): Promise<IProject | null> {
   try {
     await dbConnect()
     const project = await Project.findOne({ slug }).lean()
@@ -137,7 +137,7 @@ export async function getProjectStatic(slug: string) {
   }
 }
 
-export async function getPersonalInfoStatic() {
+export async function getPersonalInfoStatic(): Promise<IPersonalInfo | null> {
   try {
     await dbConnect()
     const personalInfo = await PersonalInfo.findOne().lean()
@@ -148,7 +148,7 @@ export async function getPersonalInfoStatic() {
   }
 }
 
-export async function getSiteSettingsStatic() {
+export async function getSiteSettingsStatic(): Promise<ISiteSettings | null> {
   try {
     await dbConnect()
     const settings = await SiteSettings.findOne().lean()
