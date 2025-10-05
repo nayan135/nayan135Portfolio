@@ -11,6 +11,7 @@ This is the portfolio website for Nayan Acharya, showcasing projects such as Fit
 - **Custom Animations:** Interactive transitions and loading animation for enhanced UX.
 - **Project Showcase:** Dynamic pages with details about each project.
 - **Error Handling:** Implemented error boundaries for improved reliability.
+- ** ADMIN DASHBOARD:** adding this to cahnge the content dynamically (soon)
 
 ## Technologies
 
@@ -23,7 +24,7 @@ This is the portfolio website for Nayan Acharya, showcasing projects such as Fit
 ## Project Structure
 
 - **/app:** Contains the main layouts and routes.
-- **/components:** Reusable UI components (e.g., Sidebar, CustomCursor, AboutSection).
+- **/components:** Reusable UI components (e.g., Sidebar, AboutSection, ProjectCard).
 - **/lib:** Utility functions and data (e.g., projects.ts).
 - **/globals.css:** Global CSS styles.
 
