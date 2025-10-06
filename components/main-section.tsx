@@ -98,20 +98,20 @@ export function MainSection({ personalInfo }: MainSectionProps) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="relative overflow-hidden min-h-[calc(100vh-80px)]"
+          className="relative overflow-hidden min-h-screen py-8 md:py-16"
         >
           <div className="absolute inset-0 bg-pattern" />
 
-          <div className="container mx-auto px-4 h-screen flex items-center">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
+          <div className="container mx-auto px-4 md:px-6 lg:px-8 flex items-center min-h-[calc(100vh-4rem)]">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center relative z-10 w-full">
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.2 }}
-                className="space-y-6"
+                className="space-y-4 md:space-y-6 order-last lg:order-first"
               >
-                <h2 className="text-lg font-medium text-primary">Welcome to my portfolio</h2>
-                <h1 className="text-5xl md:text-6xl font-bold tracking-tight">
+                <h2 className="text-sm md:text-lg font-medium text-primary">Welcome to my portfolio</h2>
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight">
                   Hey there! I'm{" "}
                   <motion.span
                     className="text-primary"
@@ -124,16 +124,16 @@ export function MainSection({ personalInfo }: MainSectionProps) {
                     {displayedName}
                   </motion.span>
                 </h1>
-                <div className="h-12">
-                  <p className="text-xl md:text-2xl text-muted-foreground">
+                <div className="h-8 md:h-12">
+                  <p className="text-lg md:text-xl lg:text-2xl text-muted-foreground">
                     A <span className="text-primary font-medium">{displayedRole}</span>
                     <span className="animate-blink text-primary">|</span>
                   </p>
                 </div>
-                <p className="text-lg text-muted-foreground">
+                <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
                   {personalInfo?.bio || "I build responsive, accessible, and performant web applications using Next.js, React, and TypeScript."}
                 </p>
-                <div className="flex flex-col sm:flex-row gap-4">
+                <div className="flex flex-col sm:flex-row gap-3 md:gap-4">
                   <Button size="lg" className="group" asChild>
                     <Link 
                       href="/projects"
@@ -193,9 +193,9 @@ export function MainSection({ personalInfo }: MainSectionProps) {
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.4 }}
-                className="relative"
+                className="relative mt-8 lg:mt-0 order-first lg:order-last"
               >
-                <div className="relative aspect-[4/5] w-full max-w-md mx-auto">
+                <div className="relative aspect-[4/5] w-full max-w-sm md:max-w-md mx-auto">
                   <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-2xl -rotate-6 transform-gpu" />
                   <Image
                     src={avatar}
