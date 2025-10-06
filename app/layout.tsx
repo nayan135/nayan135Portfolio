@@ -74,8 +74,8 @@ export const metadata = {
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  // Get GTM ID from environment variable
-  const gtmId = process.env.NEXT_PUBLIC_GTM_ID ;
+  // Get GTM ID from environment variable with fallback
+  const gtmId = process.env.NEXT_PUBLIC_GTM_ID || 'GTM-MTB58SV7'
 
   return (
     <html lang="en">
