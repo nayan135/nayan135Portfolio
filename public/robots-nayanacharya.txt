@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://nayanacharya.xyz/sitemap.xml
-Host: https://nayanacharya.xyz
