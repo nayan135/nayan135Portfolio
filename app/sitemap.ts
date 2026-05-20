@@ -4,8 +4,8 @@ import { MetadataRoute } from "next";
 export default function sitemap(): MetadataRoute.Sitemap {
   // Base URLs for all your domains - include all domains
   const baseUrls = [
-    "https://nayan135.com.np",
-    "https://nayanacharya.xyz"
+    "https://nayan135.com.np"
+
   ]
   
   // Basic pages
